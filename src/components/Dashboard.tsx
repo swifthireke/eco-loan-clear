@@ -1,10 +1,20 @@
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Users, AlertTriangle, DollarSign } from "lucide-react";
+import { TrendingUp, Users, AlertTriangle, DollarSign, LogOut, Building2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "./ui/button";
 import { MetricCard } from "./MetricCard";
 import { CreditCheckForm } from "./CreditCheckForm";
 import { LenderDistribution } from "./LenderDistribution";
 
 export const Dashboard = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -23,10 +33,18 @@ export const Dashboard = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="text-right hidden md:block">
-                <p className="text-sm font-medium text-foreground">Admin Dashboard</p>
-                <p className="text-xs text-muted-foreground">Version 1.0.1</p>
+              <Button variant="outline" onClick={() => navigate('/lenders')}>
+                <Building2 className="w-4 h-4 mr-2" />
+                View Lenders
+              </Button>
+              <div className="text-right">
+                <p className="text-sm font-medium text-foreground">{user?.name}</p>
+                <p className="text-xs text-muted-foreground capitalize">{user?.role}</p>
               </div>
+              <Button variant="outline" onClick={handleLogout}>
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
             </div>
           </div>
         </div>
