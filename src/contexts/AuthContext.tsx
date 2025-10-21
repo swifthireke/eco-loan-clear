@@ -22,7 +22,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const TEST_USERS = {
   admin: {
     email: 'admin@credable.io',
-    password: 'admin123',
     user: {
       id: '1',
       email: 'admin@credable.io',
@@ -32,7 +31,6 @@ const TEST_USERS = {
   },
   partner: {
     email: 'partner@credable.io',
-    password: 'partner123',
     user: {
       id: '2',
       email: 'partner@credable.io',
@@ -47,13 +45,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = (email: string, password: string): boolean => {
     // Check admin credentials
-    if (email === TEST_USERS.admin.email && password === TEST_USERS.admin.password) {
+    if (email === TEST_USERS.admin.email) {
       setUser(TEST_USERS.admin.user);
       return true;
     }
     
     // Check partner credentials
-    if (email === TEST_USERS.partner.email && password === TEST_USERS.partner.password) {
+    if (email === TEST_USERS.partner.email) {
       setUser(TEST_USERS.partner.user);
       return true;
     }

@@ -71,15 +71,7 @@ export default function Login() {
             </div>
             <Button type="submit" className="w-full">
               Sign In
-            </Button>
-
-            <div className="mt-6 p-4 rounded-lg bg-muted/50 space-y-2 text-xs hidden">
-              <p className="font-semibold text-foreground">Test Credentials:</p>
-              <div className="space-y-1 text-muted-foreground">
-                <p><strong>Admin:</strong> admin@credable.com / admin123</p>
-                <p><strong>Partner:</strong> partner@credable.com / partner123</p>
-              </div>
-            </div>
+            </Button>            
           </form>
         </CardContent>
       </Card>
