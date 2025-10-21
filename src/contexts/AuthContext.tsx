@@ -21,21 +21,21 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // Test credentials
 const TEST_USERS = {
   admin: {
-    email: 'admin@credable.com',
+    email: 'admin@credable.io',
     password: 'admin123',
     user: {
       id: '1',
-      email: 'admin@credable.com',
+      email: 'admin@credable.io',
       role: 'admin' as UserRole,
       name: 'Admin User'
     }
   },
   partner: {
-    email: 'partner@credable.com',
+    email: 'partner@credable.io',
     password: 'partner123',
     user: {
       id: '2',
-      email: 'partner@credable.com',
+      email: 'partner@credable.io',
       role: 'partner' as UserRole,
       name: 'Partner User'
     }

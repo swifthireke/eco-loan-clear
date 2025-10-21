@@ -18,18 +18,15 @@ export const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-border bg-white backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg">
-                C
+                <img src='favicon.ico' />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Credable
-                </h1>
-                <p className="text-xs text-muted-foreground">Credit Checker Platform</p>
+                <p className="font-bold from-primary to-accent text-muted-foreground">Financial Services Checker Platform</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
