@@ -27,7 +27,7 @@ export const CreditCheckForm = () => {
             <div className="flex gap-3">
               <Input
                 id="customerId"
-                placeholder="Enter customer ID or M-Pesa number..."
+                placeholder="Enter customer ID"
                 value={customerId}
                 onChange={(e) => setCustomerId(e.target.value)}
                 className="flex-1 bg-background border-input"
