@@ -9,6 +9,8 @@ const lenders = [
 ];
 
 export const LenderDistribution = () => {
+  const totalActiveLoans = lenders.reduce((sum, lender) => sum + lender.loans, 0);
+
   return (
     <Card className="p-6 bg-card/50 backdrop-blur-sm border-border h-fit">
       <h3 className="text-lg font-semibold mb-4 text-foreground">Lender Distribution</h3>
@@ -37,7 +39,7 @@ export const LenderDistribution = () => {
       <div className="mt-6 pt-4 border-t border-border">
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Total Active Loans</span>
-          <span className="font-bold text-foreground">8,234</span>
+          <span className="font-bold text-foreground">{totalActiveLoans.toLocaleString()}</span>
         </div>
       </div>
     </Card>

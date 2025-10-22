@@ -21,14 +21,14 @@ export const Dashboard = () => {
 
   const metricsData = {
     customers: {
-      today: { value: "127", trend: "+8.3%" },
-      week: { value: "892", trend: "+12.1%" },
-      month: { value: "3,842", trend: "+15.4%" },
+      today: { value: "10,847", trend: "+8.3%" },
+      week: { value: "120,929", trend: "+12.1%" },
+      month: { value: "550,412", trend: "+15.4%" },
     },
     totalChecks: {
-      today: { value: "412", trend: "+12.5%" },
-      week: { value: "2,847", trend: "+10.8%" },
-      month: { value: "12,459", trend: "+14.2%" },
+      today: { value: "20,771", trend: "+12.5%" },
+      week: { value: "190,394", trend: "+10.8%" },
+      month: { value: "830,118", trend: "+14.2%" },
     },
     avgScore: {
       today: { value: "638", trend: "-1.2%" },
@@ -36,14 +36,14 @@ export const Dashboard = () => {
       month: { value: "642", trend: "-3.2%" },
     },
     activeLoans: {
-      today: { value: "273", trend: "+5.8%" },
-      week: { value: "1,891", trend: "+6.4%" },
-      month: { value: "8,234", trend: "+7.1%" },
+      today: { value: "12,771", trend: "+5.8%" },
+      week: { value: "190,394", trend: "+6.4%" },
+      month: { value: "830,118", trend: "+7.1%" },
     },
     highRisk: {
-      today: { value: "41", trend: "+2.1%" },
-      week: { value: "287", trend: "+2.5%" },
-      month: { value: "1,247", trend: "+3.2%" },
+      today: { value: "2,770", trend: "+2.1%" },
+      week: { value: "10,939", trend: "+2.5%" },
+      month: { value: "80,312", trend: "+3.2%" },
     },
   };
   return (
