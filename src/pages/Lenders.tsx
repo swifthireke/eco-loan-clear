@@ -8,53 +8,47 @@ import { Progress } from '@/components/ui/progress';
 const LENDERS_DATA = [
   {
     id: 1,
-    name: 'M-Pesa Credit',
-    totalLoans: 1245,
-    activeLoans: 876,
-    totalDisbursed: 45600000,
-    averageTicket: 52000,
-    defaultRate: 3.2,
-    category: 'MNO Partner'
+    name: 'Kwika',
+    totalLoans: 4500000,
+    activeLoans: 3247000,
+    totalDisbursed: 162350000000,
+    averageTicket: 50000,
+    defaultRate: 2.8,
+    category: 'Partner',
+    percentage: 35
   },
   {
     id: 2,
-    name: 'QuickCash Loans',
-    totalLoans: 892,
-    activeLoans: 623,
-    totalDisbursed: 28400000,
-    averageTicket: 31800,
-    defaultRate: 5.8,
-    category: 'Licensed Lender'
+    name: 'TekaCash',
+    totalLoans: 4000000,
+    activeLoans: 2889091,
+    totalDisbursed: 144454550000,
+    averageTicket: 50000,
+    defaultRate: 3.1,
+    category: 'Digital Lender',
+    percentage: 31
   },
   {
     id: 3,
-    name: 'Vodacom Financial Services',
-    totalLoans: 2156,
-    activeLoans: 1543,
-    totalDisbursed: 67200000,
-    averageTicket: 31200,
-    defaultRate: 2.1,
-    category: 'MNO Partner'
+    name: 'Tala',
+    totalLoans: 2500000,
+    activeLoans: 1834000,
+    totalDisbursed: 91700000000,
+    averageTicket: 50000,
+    defaultRate: 2.5,
+    category: 'Digital Lender',
+    percentage: 20
   },
   {
     id: 4,
-    name: 'Instant Credit Solutions',
-    totalLoans: 567,
-    activeLoans: 389,
-    totalDisbursed: 15800000,
-    averageTicket: 27900,
-    defaultRate: 7.3,
-    category: 'Third Party'
-  },
-  {
-    id: 5,
-    name: 'Digital Finance Plus',
-    totalLoans: 1034,
-    activeLoans: 721,
-    totalDisbursed: 38900000,
-    averageTicket: 37600,
-    defaultRate: 4.5,
-    category: 'Licensed Lender'
+    name: 'Others',
+    totalLoans: 1800000,
+    activeLoans: 1262000,
+    totalDisbursed: 63100000000,
+    averageTicket: 50000,
+    defaultRate: 4.2,
+    category: 'Unlicensed Lenders',
+    percentage: 14
   }
 ];
 
@@ -75,7 +69,7 @@ export default function Lenders() {
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-MZ', {
       style: 'currency',
-      currency: 'MZN',
+      currency: 'MWK',
       minimumFractionDigits: 0
     }).format(amount);
   };
@@ -202,11 +196,16 @@ export default function Lenders() {
                       </div>
                     </div>
                   </div>
-                  {isAdmin && (
-                    <div className={`px-3 py-1 rounded-full text-xs font-medium ${getRiskBg(lender.defaultRate)} ${getRiskColor(lender.defaultRate)}`}>
-                      {lender.defaultRate}% Default Rate
+                  <div className="flex gap-2">
+                    <div className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                      {lender.percentage}% of total
                     </div>
-                  )}
+                    {isAdmin && (
+                      <div className={`px-3 py-1 rounded-full text-xs font-medium ${getRiskBg(lender.defaultRate)} ${getRiskColor(lender.defaultRate)}`}>
+                        {lender.defaultRate}% Default Rate
+                      </div>
+                    )}
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
@@ -214,12 +213,10 @@ export default function Lenders() {
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Active Loans</p>
                     <p className="text-2xl font-bold">{lender.activeLoans.toLocaleString()}</p>
-                    {isAdmin && (
-                      <Progress 
-                        value={(lender.activeLoans / lender.totalLoans) * 100} 
-                        className="mt-2 h-1"
-                      />
-                    )}
+                    <Progress 
+                      value={lender.percentage} 
+                      className="mt-2 h-1"
+                    />
                   </div>
                   {isAdmin && (
                     <>
