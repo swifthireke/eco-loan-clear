@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Users, AlertTriangle, DollarSign, LogOut, Building2, UserCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "./ui/button";
+import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 import { MetricCard } from "./MetricCard";
 import { CreditCheckForm } from "./CreditCheckForm";
 import { LenderDistribution } from "./LenderDistribution";
@@ -10,6 +12,7 @@ import { LenderDistribution } from "./LenderDistribution";
 export const Dashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [timePeriod, setTimePeriod] = useState<"today" | "week" | "month">("today");
 
   const handleLogout = () => {
     logout();
@@ -48,6 +51,17 @@ export const Dashboard = () => {
       </header>
 
       <main className="container mx-auto px-6 py-8">
+        {/* Time Period Filter */}
+        <div className="mb-6">
+          <Tabs value={timePeriod} onValueChange={(value) => setTimePeriod(value as "today" | "week" | "month")}>
+            <TabsList>
+              <TabsTrigger value="today">Today</TabsTrigger>
+              <TabsTrigger value="week">This Week</TabsTrigger>
+              <TabsTrigger value="month">This Month</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <MetricCard
