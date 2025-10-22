@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Users, AlertTriangle, DollarSign, LogOut, Building2 } from "lucide-react";
+import { TrendingUp, Users, AlertTriangle, DollarSign, LogOut, Building2, UserCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "./ui/button";
@@ -49,7 +49,14 @@ export const Dashboard = () => {
 
       <main className="container mx-auto px-6 py-8">
         {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+          <MetricCard
+            title="Customers"
+            value="3,842"
+            trend="+8.3%"
+            icon={UserCheck}
+            variant="accent"
+          />
           <MetricCard
             title="Total Checks"
             value="12,459"
