@@ -52,9 +52,9 @@ export const Dashboard = () => {
 
       <main className="container mx-auto px-6 py-8">
         {/* Time Period Filter */}
-        <div className="mb-6">
+        <div className="mb-6 flex justify-end">
           <Tabs value={timePeriod} onValueChange={(value) => setTimePeriod(value as "today" | "week" | "month")}>
-            <TabsList>
+            <TabsList className="bg-card border border-border shadow-sm">
               <TabsTrigger value="today">Today</TabsTrigger>
               <TabsTrigger value="week">This Week</TabsTrigger>
               <TabsTrigger value="month">This Month</TabsTrigger>
