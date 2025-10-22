@@ -18,6 +18,34 @@ export const Dashboard = () => {
     logout();
     navigate('/login');
   };
+
+  const metricsData = {
+    customers: {
+      today: { value: "127", trend: "+8.3%" },
+      week: { value: "892", trend: "+12.1%" },
+      month: { value: "3,842", trend: "+15.4%" },
+    },
+    totalChecks: {
+      today: { value: "412", trend: "+12.5%" },
+      week: { value: "2,847", trend: "+10.8%" },
+      month: { value: "12,459", trend: "+14.2%" },
+    },
+    avgScore: {
+      today: { value: "638", trend: "-1.2%" },
+      week: { value: "641", trend: "-2.1%" },
+      month: { value: "642", trend: "-3.2%" },
+    },
+    activeLoans: {
+      today: { value: "273", trend: "+5.8%" },
+      week: { value: "1,891", trend: "+6.4%" },
+      month: { value: "8,234", trend: "+7.1%" },
+    },
+    highRisk: {
+      today: { value: "41", trend: "+2.1%" },
+      week: { value: "287", trend: "+2.5%" },
+      month: { value: "1,247", trend: "+3.2%" },
+    },
+  };
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -66,36 +94,36 @@ export const Dashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <MetricCard
             title="Customers"
-            value="3,842"
-            trend="+8.3%"
+            value={metricsData.customers[timePeriod].value}
+            trend={metricsData.customers[timePeriod].trend}
             icon={UserCheck}
             variant="accent"
           />
           <MetricCard
             title="Total Checks"
-            value="12,459"
-            trend="+12.5%"
+            value={metricsData.totalChecks[timePeriod].value}
+            trend={metricsData.totalChecks[timePeriod].trend}
             icon={Users}
             variant="primary"
           />
           <MetricCard
             title="Avg Leverage Score"
-            value="642"
-            trend="-3.2%"
+            value={metricsData.avgScore[timePeriod].value}
+            trend={metricsData.avgScore[timePeriod].trend}
             icon={TrendingUp}
             variant="success"
           />
           <MetricCard
             title="Active Loans"
-            value="8,234"
-            trend="+5.8%"
+            value={metricsData.activeLoans[timePeriod].value}
+            trend={metricsData.activeLoans[timePeriod].trend}
             icon={DollarSign}
             variant="accent"
           />
           <MetricCard
             title="High Risk"
-            value="1,247"
-            trend="+2.1%"
+            value={metricsData.highRisk[timePeriod].value}
+            trend={metricsData.highRisk[timePeriod].trend}
             icon={AlertTriangle}
             variant="warning"
           />
