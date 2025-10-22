@@ -2,10 +2,10 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const lenders = [
-  { name: "Mgodi", loans: 3247, percentage: 35, color: "bg-primary" },
-  { name: "Songesha", loans: 2891, percentage: 31, color: "bg-accent" },
-  { name: "X-Pawa", loans: 1834, percentage: 20, color: "bg-secondary" },
-  { name: "Others", loans: 1262, percentage: 14, color: "bg-muted-foreground" },
+  { name: "Kwika", loans: 3247000, percentage: 35, color: "bg-primary" },
+  { name: "TekaCash", loans: 2889091, percentage: 31, color: "bg-accent" },
+  { name: "Tala", loans: 1834000, percentage: 20, color: "bg-secondary" },
+  { name: "Others", loans: 1262000, percentage: 14, color: "bg-muted-foreground" },
 ];
 
 export const LenderDistribution = () => {
