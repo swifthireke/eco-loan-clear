@@ -27,7 +27,7 @@ const generateMockData = (customerId: string) => ({
   loanHistory: [
     {
       id: 1,
-      lender: "Airtel Money",
+      lender: "Kwika",
       status: "active",
       disbursedAmount: 150000,
       repaidAmount: 90000,
@@ -37,7 +37,7 @@ const generateMockData = (customerId: string) => ({
     },
     {
       id: 2,
-      lender: "TNM Mpamba",
+      lender: "TekaCash",
       status: "active",
       disbursedAmount: 200000,
       repaidAmount: 125000,
@@ -47,7 +47,7 @@ const generateMockData = (customerId: string) => ({
     },
     {
       id: 3,
-      lender: "Standard Bank",
+      lender: "Tala",
       status: "active",
       disbursedAmount: 300000,
       repaidAmount: 150000,
@@ -57,7 +57,7 @@ const generateMockData = (customerId: string) => ({
     },
     {
       id: 4,
-      lender: "FDH Bank",
+      lender: "Others",
       status: "completed",
       disbursedAmount: 100000,
       repaidAmount: 100000,
@@ -67,7 +67,7 @@ const generateMockData = (customerId: string) => ({
     },
     {
       id: 5,
-      lender: "NBS Bank",
+      lender: "Kwika",
       status: "completed",
       disbursedAmount: 180000,
       repaidAmount: 180000,

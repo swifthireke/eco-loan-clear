@@ -24,7 +24,7 @@ const mockData = {
   retrievedAt: new Date().toISOString(),
   loanHistory: [
     {
-      lenderName: "QuickCash MZ",
+      lenderName: "Kwika",
       amountDisbursed: 25000,
       amountRepaid: 18000,
       outstandingAmount: 7000,
@@ -33,7 +33,7 @@ const mockData = {
       loanStatus: "Active"
     },
     {
-      lenderName: "Vodacom M-Pesa Advance",
+      lenderName: "TekaCash",
       amountDisbursed: 30000,
       amountRepaid: 12000,
       outstandingAmount: 18000,
@@ -42,7 +42,7 @@ const mockData = {
       loanStatus: "Active"
     },
     {
-      lenderName: "TechLend Finance",
+      lenderName: "Tala",
       amountDisbursed: 50000,
       amountRepaid: 30000,
       outstandingAmount: 20000,
@@ -51,7 +51,7 @@ const mockData = {
       loanStatus: "Active"
     },
     {
-      lenderName: "QuickCash MZ",
+      lenderName: "Others",
       amountDisbursed: 15000,
       amountRepaid: 15000,
       outstandingAmount: 0,
