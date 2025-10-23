@@ -1,0 +1,2 @@
+[functions.credit-check]
+verify_jwt = false
