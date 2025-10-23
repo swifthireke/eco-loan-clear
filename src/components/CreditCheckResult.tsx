@@ -119,7 +119,7 @@ export const CreditCheckResult = ({ customerId }: CreditCheckResultProps) => {
               <span className="text-sm text-muted-foreground">Outstanding</span>
             </div>
             <p className="text-xl font-bold text-foreground">
-              {mockData.currentOutstanding.toLocaleString()} MZN
+              MWK {mockData.currentOutstanding.toLocaleString()}
             </p>
           </div>
           <div className="p-4 rounded-lg bg-muted/50 border border-border">
@@ -182,11 +182,11 @@ export const CreditCheckResult = ({ customerId }: CreditCheckResultProps) => {
               <div className="grid grid-cols-3 gap-4 mt-3 pt-3 border-t border-border">
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">Disbursed</p>
-                  <p className="font-semibold text-foreground">{loan.amountDisbursed.toLocaleString()} MZN</p>
+                  <p className="font-semibold text-foreground">MWK {loan.amountDisbursed.toLocaleString()}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">Repaid</p>
-                  <p className="font-semibold text-success">{loan.amountRepaid.toLocaleString()} MZN</p>
+                  <p className="font-semibold text-success">MWK {loan.amountRepaid.toLocaleString()}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">Outstanding</p>
@@ -194,7 +194,7 @@ export const CreditCheckResult = ({ customerId }: CreditCheckResultProps) => {
                     "font-semibold",
                     loan.outstandingAmount > 0 ? "text-warning" : "text-success"
                   )}>
-                    {loan.outstandingAmount.toLocaleString()} MZN
+                    MWK {loan.outstandingAmount.toLocaleString()}
                   </p>
                 </div>
               </div>
